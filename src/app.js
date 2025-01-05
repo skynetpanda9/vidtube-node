@@ -3,6 +3,7 @@ import cors from "cors";
 import morgan from "morgan";
 import dotenv from "dotenv";
 import logger from "../logger.js";
+import cookieParser from "cookie-parser";
 
 dotenv.config({
   path: "./.env",
@@ -24,6 +25,7 @@ app.use(
 );
 app.use(express.urlencoded({ extended: true, limit: "16kb" }));
 app.use(express.static("public"));
+app.use(cookieParser());
 
 // morgan middleware
 const morganFormat = ":method :url :status :response-time ms";
@@ -45,8 +47,12 @@ app.use(
 
 // import routes
 import healthcheckRouter from "./routes/healthcheck.routes.js";
+import userRouter from "./routes/user.routes.js";
+import { errorHandler } from "./middlewares/errror.middlewares.js";
 
 // use routes
 app.use("/api/v1/healthcheck", healthcheckRouter);
+app.use("/api/v1/users", userRouter);
 
+app.use(errorHandler);
 export { app };

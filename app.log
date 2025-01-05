@@ -1,0 +1,2 @@
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/\",\"status\":\"404\",\"responseTime\":\"1.549\"}","timestamp":"2025-01-05T08:19:01.028Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/adminer\",\"status\":\"404\",\"responseTime\":\"0.428\"}","timestamp":"2025-01-05T08:19:07.763Z"}
